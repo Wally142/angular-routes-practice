@@ -1,15 +1,18 @@
-myApp.controller('SonicController', function (ThingService) {
-    console.log('Sonic!', ThingService.blueThings);
+myApp.controller('SonicController', function (HighFiveService) {
+    console.log('Sonic!');
     
     var vm = this;
-    
-    vm.blueStuff = ThingService.blueThings;
-    vm.redItems = ThingService.redThings;
-    vm.countObj = ThingService.countObj;
+    vm.successCount = 0;
+    vm.totalCount = 0;
+    vm.skillLevel = HighFiveService.setNumber();
+    console.log('Skill level: ', vm.skillLevel);
+    vm.highFive = function () {
+        var quality = HighFiveService.setNumber();
+        console.log('quality: ', quality);
+        if (quality >= vm.skillLevel) {
+            vm.successCount++;
+        }
+        vm.totalCount++;
 
-    vm.clickUpdate = function (){
-        console.log('click worked');
-        ThingService.incCounter();
-    }
-
+    };
 });

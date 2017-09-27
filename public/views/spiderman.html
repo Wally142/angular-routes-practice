@@ -1,9 +1,6 @@
 <h1>The Amazing Spiderman!</h1>
 <section>
-    <img ng-click='SC.showPowers()' class="Pic1" src="https://i.ytimg.com/vi/K4zm30yeHHE/maxresdefault.jpg">
-    <ol ng-show='SC.description'>Powers and Abilities:
-       <li>Super Strength</li>
-       <li>Super Speed</li> 
-       <li>Spider Sense</li>
-       <li>Stick to Walls</li>
-    </ol> 
+    <img class="Pic1" src="https://i.ytimg.com/vi/K4zm30yeHHE/maxresdefault.jpg">
+    <button ng-click="SC.highFive()">High Five</button>
+    <p>{{ SC.successCount }} / {{ SC.totalCount }}</p>
+</section>

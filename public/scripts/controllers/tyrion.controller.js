@@ -1,9 +1,18 @@
-myApp.controller('TyrionController', function (ThingService) {
+myApp.controller('TyrionController', function (HighFiveService) {
     console.log('Tyrion Lannister!');
 
     var vm = this;
-
-    vm.redItems =ThingService.redThings
-
+    vm.successCount = 0;
+    vm.totalCount = 0;
+    vm.skillLevel = HighFiveService.setNumber();
+    console.log('Skill level: ', vm.skillLevel);
+    vm.highFive = function () {
+        var quality = HighFiveService.setNumber();
+        console.log('quality: ', quality);
+        if (quality >= vm.skillLevel) {
+            vm.successCount++;
+        }
+        vm.totalCount++;
+    };
 
 });
